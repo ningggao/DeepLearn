@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        {% for user in users %}
+          <ul id="user.username">
+            <li>
+              <span class="field-name">UserID:</span>
+              <span class="field-value">{{ user.UserID }}</span>
+            </li>
+            <li>
+                <span class="field-name">name:</span>
+                <span class="field-value">{{ user.name }}</span>
+              </li>
+            </li>
+          </ul>
+        {% endfor %}
+      </div>
+
+</body>
+
+</html>

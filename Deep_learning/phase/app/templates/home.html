@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+      <div>
+          <h4>Information Management</h4>
+      </div>
+
+    <div class="container">
+        <div>
+            <h4><a href="/user/create">Create</a></h4>
+        </div>
+
+
+        {% for user in users %}
+          <ul id="user.username">
+            <li>
+              <span class="field-name">UserID:</span>
+              <span class="field-value">{{ user.UserID }}</span>
+            </li>
+            <li>
+                <span class="field-name">name:</span>
+                <span class="field-value">{{ user.name }}</span>
+              </li>
+            </li>
+            <td><a href="/delete?id={{ user[0] }}"><button>Delete</button></a></td>
+            <td><a href="/user/create"><button>Update</button></a></td>
+          </ul>
+        {% endfor %}
+      </div>
+
+</body>
+
+</html>
